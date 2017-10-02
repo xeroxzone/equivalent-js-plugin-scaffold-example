@@ -1,7 +1,7 @@
 {
   "name": "equivalent-js-plugin-scaffold-example",
   "version": "0.1.1",
-  "description": "A example scaffold for an EquivalentJS plugin",
+  "description": "An example scaffold for an EquivalentJS plugin",
   "main": "./node_modules/equivalent-js/src/lib/equivalent.js",
   "scripts": {
     "dev:run": "./node_modules/.bin/gulp dev",
