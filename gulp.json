@@ -1,0 +1,101 @@
+{
+  "vendors" : {
+    "src" : [
+      "node_modules/jquery/dist/jquery.min.js",
+      "node_modules/material-components-web/dist/material-components-web.js",
+      "node_modules/material-components-web/dist/material-components-web.min.js"
+    ],
+    "dest" : "web/js/lib"
+  },
+  "docs" : {
+    "src" : [
+      "node_modules/equivalent-js/src/lib/equivalent/**/*.js",
+      "node_modules/equivalent-js-*/**/*.js",
+      "node_modules/equivalent-js/docs/**/*.md",
+      "node_modules/equivalent-js/docs/*.md",
+      "node_modules/equivalent-js/*.md",
+      "docs/**/*.md"
+    ],
+    "dest" : "web/doc"
+  },
+  "testunit" : {
+    "src" : [
+      "node_modules/qunitjs/qunit/qunit.js"
+    ],
+    "dest" : "web/js/lib"
+  },
+  "tests" : {
+    "src" : [
+      "node_modules/equivalent-js/src/test/**/*.js",
+      "src/test/lib/**/*.js",
+      "src/test/lib/*.js"
+    ],
+    "dest" : "web/js"
+  },
+  "configs" : {
+    "src" : [
+      "src/config/*.json"
+    ],
+    "dest" : "web/js/config"
+  },
+  "plugins" : {
+    "config": [
+      "node_modules/equivalent-js-plugin-*/plugin.json"
+    ],
+    "src" : [
+      "node_modules/equivalent-js-plugin-*/src/lib/**",
+      "node_modules/equivalent-js-plugin-*/src/test/lib/**"
+    ],
+    "dest" : [
+      "web/js/lib/equivalent/Plugin",
+      "web/js/test/lib/equivalent/Plugin"
+    ]
+  },
+  "pluginDev" : {
+    "config": [
+      "plugin.json"
+    ],
+    "src" : [
+      "src/lib/**",
+      "src/test/lib/**"
+    ],
+    "dest" : [
+      "web/js/lib/equivalent/Plugin",
+      "web/js/test/lib/equivalent/Plugin"
+    ]
+  },
+  "apps" : {
+    "src" : [
+      "node_modules/equivalent-js/src/app/**/*.js"
+    ],
+    "dest" : "web/js"
+  },
+  "scripts" : {
+    "src" : [
+      "node_modules/equivalent-js/src/lib/**/*.js",
+      "!node_modules/equivalent-js/src/lib/ui"
+    ],
+    "dest" : "web/js"
+  },
+  "styles" : {
+    "src" : [
+      "node_modules/equivalent-js/src/app/**/*.scss",
+      "node_modules/equivalent-js/src/lib/ui/**",
+      "node_modules/material-components-web/dist/material-components-web.css",
+      "node_modules/material-components-web/dist/material-components-web.min.css"
+    ],
+    "dest" : "web/css"
+  },
+  "minify": {
+    "name": "equivalent.min.js",
+    "src": [
+      "node_modules/equivalent-js/src/lib/equivalent/System.js",
+      "node_modules/equivalent-js/src/lib/equivalent/Manager.js",
+      "node_modules/equivalent-js/src/lib/equivalent/Manager/Extend.js",
+      "node_modules/equivalent-js/src/lib/equivalent/Manager/Controller.js",
+      "node_modules/equivalent-js/src/lib/equivalent/Manager/App.js",
+      "node_modules/equivalent-js/src/lib/equivalent/Renderer.js"
+    ],
+    "dest": "web/js/lib"
+  }
+}

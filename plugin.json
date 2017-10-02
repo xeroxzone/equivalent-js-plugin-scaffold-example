@@ -1,0 +1,6 @@
+{
+  "name": "equivalent-js-plugin-scaffold-example",
+  "type": "EquivalentJS.Plugin.ScaffoldExample",
+  "classPath": "src/lib",
+  "testPath": "src/test/lib"
+}
