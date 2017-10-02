@@ -90,6 +90,7 @@
     "name": "equivalent.min.js",
     "src": [
       "node_modules/equivalent-js/src/lib/equivalent/System.js",
+      "node_modules/equivalent-js/src/lib/equivalent/Plugin.js",
       "node_modules/equivalent-js/src/lib/equivalent/Manager.js",
       "node_modules/equivalent-js/src/lib/equivalent/Manager/Extend.js",
       "node_modules/equivalent-js/src/lib/equivalent/Manager/Controller.js",

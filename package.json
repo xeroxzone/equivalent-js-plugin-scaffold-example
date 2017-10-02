@@ -30,7 +30,7 @@
     "qunitjs": "^2.4.0",
     "jsdoc": "^3.5.3",
     "ink-docstrap": "^1.3.0",
-    "equivalent-js": "^0.2.5"
+    "equivalent-js": "^0.2.6"
   },
   "keywords": [
     "equivalent-js",
