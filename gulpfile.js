@@ -72,7 +72,7 @@ function buildConcat(cfg, builder, base) {
 }
 
 /**
- * @param {{config: Array, src: Array, dest: Array}} cfg
+ * @param {{config: Array, layout: Array, src: Array, dest: Array}} cfg
  */
 function install(cfg) {
     var installScripts = function (src, dest, base) {
@@ -88,6 +88,16 @@ function install(cfg) {
     var installConfigs = function (src, dest) {
         return gulp.src(src)
             .pipe(gulp.dest(dest));
+    };
+
+    var installStyles = function (src, dest) {
+        return gulp.src(src)
+            .pipe(plumber())
+                .pipe(sourcemaps.init())
+                    .pipe(sass({includePaths: SASS_INCLUDE_PATHS, outputStyle: 'compressed'}))
+                .pipe(sourcemaps.write())
+            .pipe(plumber.stop())
+        .pipe(gulp.dest(dest));
     };
 
     var pluginPath = '';
@@ -110,6 +120,14 @@ function install(cfg) {
 
         if (1 < cfg.src.length) {
             installScripts(cfg.src[1], cfg.dest[1] + pluginPath, '.');
+        }
+
+        if (0 < cfg.layout.length) {
+            if ('' !== pluginPath) {
+                pluginPath += '/' + pluginConfig.classPath;
+            }
+
+            installStyles(cfg.layout[0], cfg.dest[2] + pluginPath);
         }
     }
 }

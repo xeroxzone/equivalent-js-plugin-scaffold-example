@@ -19,6 +19,13 @@ DIC.define('EquivalentJS.Plugin.ScaffoldExample', new function () {
     var _ = this;
 
     /**
+     * @description autoload a stylesheet
+     * @memberOf EquivalentJS.Plugin.ScaffoldExample
+     * @type {boolean}
+     */
+    _.layout = true;
+
+    /**
      * @description construct the plugin module class
      * @memberOf EquivalentJS.Plugin.ScaffoldExample
      */

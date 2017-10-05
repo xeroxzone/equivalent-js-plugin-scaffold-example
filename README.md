@@ -38,7 +38,7 @@ Also the [test][MTR] and [doc][MDR] runner are available and are reduced to the 
 For plugin development at [*parameters.json*](src/config/parameters.json) the configuration property "plugins"
 holds the collection of loadable equivalent-js plugins.
 
-The boolean flag indicates the plugin is active and that the framework try to load it.
+The boolean flag indicates the plugin is active and the framework try to load it.
 
 ```json
 {
@@ -59,7 +59,7 @@ or
 
     npm run dev:watch
 
-## Run demo application in browser
+## Run demo application in browser with loaded plugins
 
     npm run dev:http
     
