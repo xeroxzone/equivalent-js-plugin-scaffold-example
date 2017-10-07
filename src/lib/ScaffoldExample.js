@@ -1,5 +1,6 @@
 "use strict";
 
+/** @module EquivalentJS/Plugin */
 /** @module EquivalentJS/Plugin/ScaffoldExample */
 
 /**
