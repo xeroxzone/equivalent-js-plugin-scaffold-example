@@ -72,7 +72,7 @@ function buildConcat(cfg, builder, base) {
 }
 
 /**
- * @param {{config: Array, layout: Array, src: Array, dest: Array}} cfg
+ * @param {{config: string, classes: Object, tests: Object, layout: Object}} cfg
  */
 function install(cfg) {
     var installScripts = function (src, dest, base) {
@@ -100,34 +100,33 @@ function install(cfg) {
         .pipe(gulp.dest(dest));
     };
 
-    var pluginPath = '';
-    if ('plugin.json' === cfg.config[0]) {
-        pluginPath = '/' + pluginConfig.name;
-    }
-
     if (cfg.hasOwnProperty('config') &&
-        Array.isArray(cfg.config) &&
-        Array.isArray(cfg.src) &&
-        Array.isArray(cfg.dest)
+        typeof cfg.config === 'string' &&
+        typeof cfg.classes.dest === 'string'
     ) {
+        var pluginPath = '';
+        if ('plugin.json' === cfg.config) {
+            pluginPath = '/' + pluginConfig.name;
+        }
+
         if (0 < cfg.config.length) {
-            installConfigs(cfg.config, cfg.dest[0] + pluginPath);
-        }
+            installConfigs(cfg.config, cfg.classes.dest + pluginPath);
 
-        if (0 < cfg.src.length) {
-            installScripts(cfg.src[0], cfg.dest[0] + pluginPath, '.');
-        }
-
-        if (1 < cfg.src.length) {
-            installScripts(cfg.src[1], cfg.dest[1] + pluginPath, '.');
-        }
-
-        if (0 < cfg.layout.length) {
-            if ('' !== pluginPath) {
-                pluginPath += '/' + pluginConfig.classPath;
+            if (0 < cfg.classes.src.length) {
+                installScripts(cfg.classes.src, cfg.classes.dest + pluginPath, '.');
             }
 
-            installStyles(cfg.layout[0], cfg.dest[2] + pluginPath);
+            if (0 < cfg.tests.src.length) {
+                installScripts(cfg.tests.src, cfg.tests.dest + pluginPath, '.');
+            }
+
+            if (0 < cfg.layout.src.length) {
+                if ('' !== pluginPath) {
+                    pluginPath += '/' + pluginConfig.classPath;
+                }
+
+                installStyles(cfg.layout.src, cfg.layout.dest + pluginPath);
+            }
         }
     }
 }
