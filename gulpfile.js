@@ -278,7 +278,7 @@ gulp.task('dev:watch:scripts', function() {
 });
 
 gulp.task('dev:watch:plugin', function() {
-    return watch(config.pluginDev.src, function () {
+    return watch(config.pluginDev.classes.src, function () {
         del(['web/js/lib/equivalent/Plugin/*.js', 'web/js/lib/equivalent/Plugin/**/*.js']).then(function () {
             buildPlugins(config.pluginDev);
         });
