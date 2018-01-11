@@ -1,10 +1,11 @@
 "use strict";
 
+/** @module EquivalentJS/Plugin */
 /** @module EquivalentJS/Plugin/ScaffoldExample */
 
 /**
  * @class
- * @classdesc a example scaffold for an equivalent-js plugin
+ * @classdesc an example scaffold for an equivalent-js plugin
  * @implements {EquivalentJS.Manager.Module.class}
  * @typedef {Object} EquivalentJS.Plugin.ScaffoldExample
  * @constructs
